@@ -20,8 +20,33 @@ function evaluateWinner(p1Choice, p2Choice) {
   else return 0;
 }
 
-// Test:
-const comp1Choice = getComputerChoice();
-const comp2Choice = getComputerChoice();
-console.log(options[comp1Choice], options[comp2Choice]);
-console.log(evaluateWinner(comp1Choice, comp2Choice));
+function play(rounds = 1) {
+  for (let i = 0; i < rounds; i++) {
+    const playerChoiceInt = +prompt(`Choose:
+    [0] Rock
+    [1] Paper
+    [2] Scissors`);
+    const compChoiceInt = getComputerChoice();
+    const winner = evaluateWinner(playerChoiceInt, compChoiceInt);
+    const playerChoiceStr = options[playerChoiceInt];
+    const compChoiceStr = options[compChoiceInt];
+    alert(`Player: ${playerChoiceStr} vs Computer: ${compChoiceStr}`);
+    switch (winner) {
+      case 1:
+        alert("Player Wins!");
+        break;
+      case 2:
+        alert("Computer Wins!");
+        break;
+      default:
+        alert("Tie!");
+        break;
+    }
+  }
+}
+
+function game() {
+  play(5);
+}
+
+game();
