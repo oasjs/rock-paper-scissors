@@ -1,16 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock, Paper, Scissors!</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rock, Paper, Scissors!</title>
-  <script src="script.js"></script>
-</head>
-
-<body>
-
-</body>
-
+  <body>
+    <h1>Rock &bull; Paper &bull; Scissors</h1>
+    <div class="game-container">
+      <!-- LEFT PLAYER -->
+      <div class="score-panel"></div>
+      <div class="left-player">
+        <h2>Player</h2>
+        <div class="hands-display"></div>
+        <div class="buttons-menu">
+          <button>Rock</button>
+          <button>Paper</button>
+          <button>Scissors</button>
+        </div>
+      </div>
+      <!-- RESULT DISPLAY -->
+      <div class="result-display"></div>
+      <!-- RIGHT PLAYER -->
+      <div class="score-panel"></div>
+      <div class="right-player">
+        <h2>Computer</h2>
+        <div class="hands-display"></div>
+        <div class="buttons-menu"></div>
+      </div>
+    </div>
+    <!-- BOTTOM -->
+    <div class="bottom-container">
+      <button class="restart-button">Reset</button>
+    </div>
+  </body>
 </html>
