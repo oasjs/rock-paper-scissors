@@ -5,27 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock, Paper, Scissors!</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
+    <!-- Title -->
     <h1>Rock &bull; Paper &bull; Scissors</h1>
+    <!-- Game container -->
     <div class="game-container">
-      <!-- LEFT PLAYER -->
+      <!-- Left player section -->
       <div class="score-panel"></div>
       <div class="left-player">
         <h2>Player</h2>
-        <div class="hands-display"></div>
+        <div id="hands-display" class="hands-display">
+          <img id="hand-image" src="img/0.png" alt="rock" />
+        </div>
         <div class="buttons-menu">
-          <button>Rock</button>
-          <button>Paper</button>
-          <button>Scissors</button>
+          <div class="option-button">
+            <input type="radio" id="rock" name="option" value="0" checked />
+            <label for="rock">Rock</label>
+          </div>
+          <div class="option-button">
+            <input type="radio" id="paper" name="option" value="1" />
+            <label for="paper">Paper</label>
+          </div>
+          <div class="option-button">
+            <input type="radio" id="scissors" name="option" value="2" />
+            <label for="scissors">Scissors</label>
+          </div>
         </div>
       </div>
-      <!-- RESULT DISPLAY -->
+      <!-- Result display -->
       <div class="result-display"></div>
-      <!-- RIGHT PLAYER -->
+      <!-- Right player section -->
       <div class="score-panel"></div>
       <div class="right-player">
         <h2>Computer</h2>
@@ -33,9 +46,10 @@
         <div class="buttons-menu"></div>
       </div>
     </div>
-    <!-- BOTTOM -->
+    <!-- Control menu -->
     <div class="bottom-container">
-      <button class="restart-button">Reset</button>
+      <button id="play-button" class="play">Go!</button>
+      <button id="restart-button" class="restart">Reset</button>
     </div>
   </body>
 </html>
