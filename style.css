@@ -16,13 +16,17 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100svh;
+  padding: 32px;
   background-color: #242424;
   font-family: "Rubik", sans-serif;
 }
 
 h1 {
-  margin: 80  px 0;
-
   color: white;
   text-align: center;
 }
@@ -72,6 +76,9 @@ button {
 
 .hands-display {
   flex: 0 1 370px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 370px;
   border-radius: 32px;
 }
@@ -81,12 +88,18 @@ button {
 .right-player .hands-display {
   background-color: #172b48;
 }
+.hands-display img {
+  flex: 1;
+  max-width: 300px;
+}
 
 .buttons-menu {
+  display: flex;
+  gap: 8px;
   min-height: 35px;
 }
-.buttons-menu button {
-  padding: 8px 32px;
+.option-button {
+  padding: 8px 16px;
 
   color: white;
   font-size: 16px;
@@ -95,25 +108,45 @@ button {
   border-radius: 4px;
   background-color: #c92f3a;
 }
+.option-button label {
+  margin-left: 8px;
+}
 
 /* Bottom div */
 .bottom-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  margin: 40px 0;
+  gap: 16px;
 }
-.restart-button {
-  padding: 18px 64px;
+button.play {
+  /* Layout */
+  padding: 16px 96px;
   border-radius: 100px;
-  background-color: rgba(20, 20, 20);
-  color: rgba(255, 255, 255, 0.8);
-
-  font-size: 18px;
+  background-color: rgba(255, 255, 255);
+  /* Text */
+  color: rgba(20, 20, 20);
+  font-size: 24px;
   font-weight: 600;
   text-transform: uppercase;
+  transition: all 0.1s ease;
 }
-.restart-button:hover {
-  background-color: rgba(20, 20, 20, 0.7);
+button.play:hover {
+  transform: scale(1.1);
+}
+button.restart {
+  /* Layout */
+  padding: 16px 96px;
+  border-radius: 4px;
+  background-color: transparent;
+  /* Text */
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.1s ease;
+}
+button.restart:hover {
+  background-color: rgba(0, 0, 0);
 }
