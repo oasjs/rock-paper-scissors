@@ -15,11 +15,6 @@ function getPlayerChoice() {
     }
   }
 }
-
-function setChoiceImage() {
-  const playerChoice = getPlayerChoice();
-}
-
 function getComputerChoice() {
   return randInt(0, options.length);
 }
@@ -34,29 +29,6 @@ function evaluateWinner(p1Choice, p2Choice) {
   else if (options[p2Choice] === options[previous]) return 1;
   else return 0;
 }
-
-function play() {
-  const playerChoice = getPlayerChoice();
-  const compChoice = getComputerChoice();
-  setComputerHandImage(compChoice);
-  const winner = evaluateWinner(playerChoice, compChoice);
-  const resultDisplay = document.querySelector("#result-display");
-  let winnerStr;
-  switch (winner) {
-    case 1:
-      winnerStr = "Player Wins!";
-      break
-    case 2:
-      winnerStr = "Computer Wins!";
-      break
-    default:
-      winnerStr = "Tie!";
-      break
-  }
-  resultDisplay.innerText = winnerStr;
-}
-
-getPlayerChoice();
 
 function setPlayerHandImage() {
   const input = document.getElementsByName("option");
@@ -74,6 +46,48 @@ function setComputerHandImage(index) {
   const img = document.getElementById("computer-hand");
   img.src = `img/${index}.png`;
   img.alt = options[index];
+}
+
+function displayResult(winner) {
+  const resultDisplay = document.querySelector("#result-display");
+  let winnerStr;
+  switch (winner) {
+    case 1:
+      winnerStr = "Player Wins!";
+      break;
+    case 2:
+      winnerStr = "Computer Wins!";
+      break;
+    default:
+      winnerStr = "Tie!";
+      break;
+  }
+  resultDisplay.innerText = winnerStr;
+}
+
+function updateScores(winner) {
+  leftPlayerScore = document.querySelector("#left-player-score h1");
+  rightPlayerScore = document.querySelector("#right-player-score h1");
+  switch (winner) {
+    case 1:
+      leftPlayerScore.innerText = ++leftPlayerScore.innerText;
+      break;
+    case 2:
+      rightPlayerScore.innerText = ++rightPlayerScore.innerText;
+      break;
+    default:
+      return;
+  }
+}
+
+function play() {
+  const playerChoice = getPlayerChoice();
+  const compChoice = getComputerChoice();
+  setComputerHandImage(compChoice);
+
+  const winner = evaluateWinner(playerChoice, compChoice);
+  displayResult(winner);
+  updateScores(winner);
 }
 
 function game() {
