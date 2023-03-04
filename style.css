@@ -59,6 +59,25 @@ button {
   z-index: 0;
 }
 
+.score {
+  margin: 0 32px;
+}
+.score h1 {
+  font-size: 64px;
+}
+#left-player-score h1 {
+  color: #e63946;
+}
+#right-player-score h1 {
+  color: #1d3557;
+}
+.score p {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
 .left-player,
 .right-player {
   flex: 0 1 570px;
@@ -67,7 +86,6 @@ button {
   justify-content: space-around;
   align-items: center;
 
-  margin: 10px;
   height: inherit;
   border-radius: 16px;
 }
