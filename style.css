@@ -112,7 +112,8 @@ button {
 }
 .hands-display img {
   flex: 1;
-  max-width: 300px;
+  max-width: 370px;
+  border-radius: 32px;
 }
 
 .buttons-menu {
