@@ -37,14 +37,16 @@ function setPlayerHandImage() {
     option.addEventListener("input", updateValue);
   });
   function updateValue(e) {
-    img.src = `img/${e.target.value}.png`;
+    const imgName = options[e.target.value];
+    img.src = `img/${imgName}_left.png`;
     img.alt = options[e.target.value];
   }
 }
 
 function setComputerHandImage(index) {
   const img = document.getElementById("computer-hand");
-  img.src = `img/${index}.png`;
+  const imgName = options[index];
+  img.src = `img/${imgName}_right.png`;
   img.alt = options[index];
 }
 
@@ -89,13 +91,17 @@ function play() {
   displayResult(winner);
   updateScores(winner);
 }
+function reset() {
+  window.location.reload();
+}
 
 function game() {
   setPlayerHandImage();
 
   const playButton = document.querySelector("#play-button");
-  console.log(playButton);
   playButton.addEventListener("click", play);
+  const resetButton = document.querySelector("#restart-button");
+  resetButton.addEventListener("click", reset);
 }
 
 game();
